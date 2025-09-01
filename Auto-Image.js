@@ -16,7 +16,7 @@
       MIN: 3, // Random range minimum
       MAX: 20, // Random range maximum
     },
-    PAINTING_SPEED_ENABLED: true, // On by default
+    PAINTING_SPEED_ENABLED: false, // On by default
     AUTO_CAPTCHA_ENABLED: true, // Turnstile generator enabled by default
     TOKEN_SOURCE: 'generator', // "generator", "manual", or "hybrid" - default to generator
     COOLDOWN_CHARGE_THRESHOLD: 1, // Default wait threshold
@@ -190,6 +190,30 @@
           'pixel-blink': true,
         },
       },
+      'Minecraft': {
+        primary: '#8b4513',
+        secondary: '#654321',
+        accent: '#a0522d',
+        text: '#ffffff',
+        highlight: '#32cd32',
+        success: '#228b22',
+        error: '#dc143c',
+        warning: '#ffd700',
+        neon: '#32cd32',
+        purple: '#9acd32',
+        pink: '#deb887',
+        fontFamily: "'Courier New', 'Monaco', monospace",
+        borderRadius: '0',
+        borderStyle: 'solid',
+        borderWidth: '3px',
+        boxShadow: '4px 4px 0px #000000, 2px 2px 0px #333333',
+        backdropFilter: 'none',
+        animations: {
+          glow: false,
+          scanline: false,
+          'pixel-blink': true,
+        },
+      },
     },
     currentTheme: 'Classic Autobot',
     PAINT_UNAVAILABLE: true,
@@ -222,7 +246,8 @@
     document.documentElement.classList.remove(
       'wplace-theme-classic',
       'wplace-theme-classic-light',
-      'wplace-theme-neon'
+      'wplace-theme-neon',
+      'wplace-theme-minecraft'
     );
 
     let themeClass = 'wplace-theme-classic'; // default
@@ -230,6 +255,8 @@
       themeClass = 'wplace-theme-neon';
     } else if (CONFIG.currentTheme === 'Classic Light') {
       themeClass = 'wplace-theme-classic-light';
+    } else if (CONFIG.currentTheme === 'Minecraft') {
+      themeClass = 'wplace-theme-minecraft';
     }
 
     document.documentElement.classList.add(themeClass);
@@ -659,7 +686,7 @@
       return `${width}x${height}_${px},${py}_${rx},${ry}_${state.blueMarbleEnabled}_${state.overlayOpacity}`;
     }
 
-    // --- OVERLAY UPDATE: Optimized chunking with caching and batch processing ---
+    // --- OVERLAY UPDATE: Optimized chunking with caching and  processing ---
     async processImageIntoChunks() {
       if (!this.imageBitmap || !this.startCoords) return;
 
@@ -706,7 +733,7 @@
       const totalTiles = (endTileX - startTileX + 1) * (endTileY - startTileY + 1);
       console.log(`🔄 Processing ${totalTiles} overlay tiles...`);
 
-      // Process tiles in batches to avoid blocking the main thread
+      // Process tiles in es to avoid blocking the main thread
       const batchSize = 4; // Process 4 tiles at a time
       const tilesToProcess = [];
 
@@ -3431,7 +3458,7 @@
                 <label id="cooldownLabel">${Utils.t('waitCharges')}:</label>
                 <div class="wplace-slider-container">
                     <input type="range" id="cooldownSlider" class="wplace-slider" min="1" max="1" value="${state.cooldownChargeThreshold}">
-                    <span id="cooldownValue" class="wplace-cooldown-value">${state.cooldownChargeThreshold}</span>
+                    <input type="number" id="cooldownInput" class="wplace-cooldown-input" min="1" max="1" value="${state.cooldownChargeThreshold}" title="Type exact value">
                 </div>
             </div>
         </div>
@@ -3729,7 +3756,7 @@
           <div id="normalBatchControls" class="wplace-batch-controls wplace-normal-batch-controls">
             <div class="wplace-speed-slider-container">
               <input type="range" id="speedSlider" min="${CONFIG.PAINTING_SPEED.MIN}" max="${CONFIG.PAINTING_SPEED.MAX}" value="${CONFIG.PAINTING_SPEED.DEFAULT}" class="wplace-speed-slider">
-              <div id="speedValue" class="wplace-speed-value">${CONFIG.PAINTING_SPEED.DEFAULT} (batch size)</div>
+              <input type="number" id="speedInput" class="wplace-speed-input" min="${CONFIG.PAINTING_SPEED.MIN}" max="${CONFIG.PAINTING_SPEED.MAX}" value="${CONFIG.PAINTING_SPEED.DEFAULT}" title="Type exact batch size" placeholder="batch size">
             </div>
             <div class="wplace-speed-labels">
               <span class="wplace-speed-min"><i class="fas fa-turtle"></i> ${CONFIG.PAINTING_SPEED.MIN}</span>
@@ -3969,7 +3996,7 @@
           }
         }
 
-        #speedSlider::-webkit-slider-thumb, #overlayOpacitySlider::-webkit-slider-thumb {
+        #speedSlider::-webkit-slider-thumb, #overlayOpacitySlider::-webkit-slider-thumb, #cooldownSlider::-webkit-slider-thumb {
           -webkit-appearance: none;
           width: 18px;
           height: 18px;
@@ -3980,12 +4007,12 @@
           transition: all 0.2s ease;
         }
 
-        #speedSlider::-webkit-slider-thumb:hover, #overlayOpacitySlider::-webkit-slider-thumb:hover {
+        #speedSlider::-webkit-slider-thumb:hover, #overlayOpacitySlider::-webkit-slider-thumb:hover, #cooldownSlider::-webkit-slider-thumb:hover {
           transform: scale(1.2);
           box-shadow: 0 4px 8px rgba(0,0,0,0.4), 0 0 0 3px #4facfe;
         }
 
-        #speedSlider::-moz-range-thumb, #overlayOpacitySlider::-moz-range-thumb {
+        #speedSlider::-moz-range-thumb, #overlayOpacitySlider::-moz-range-thumb, #cooldownSlider::-moz-range-thumb {
           width: 18px;
           height: 18px;
           border-radius: 50%;
@@ -4283,7 +4310,6 @@
     const closeStatsBtn = statsContainer.querySelector('#closeStatsBtn');
     const refreshChargesBtn = statsContainer.querySelector('#refreshChargesBtn');
     const cooldownSlider = container.querySelector('#cooldownSlider');
-    const cooldownValue = container.querySelector('#cooldownValue');
 
     if (!uploadBtn || !selectPosBtn || !startBtn || !stopBtn) {
       console.error('Some UI elements not found:', {
@@ -4646,12 +4672,41 @@
 
       // Speed slider event listener
       const speedSlider = settingsContainer.querySelector('#speedSlider');
-      const speedValue = settingsContainer.querySelector('#speedValue');
-      if (speedSlider && speedValue) {
+      const speedInput = settingsContainer.querySelector('#speedInput');
+      if (speedSlider && speedInput) {
         speedSlider.addEventListener('input', (e) => {
           const speed = parseInt(e.target.value, 10);
           state.paintingSpeed = speed;
-          speedValue.textContent = `${speed} (batch size)`;
+          speedInput.value = speed;
+          saveBotSettings();
+        });
+      }
+
+      // Speed input field event listener
+      if (speedInput && speedSlider) {
+        speedInput.addEventListener('input', (e) => {
+          const speed = parseInt(e.target.value, 10);
+          if (speed >= CONFIG.PAINTING_SPEED.MIN && speed <= CONFIG.PAINTING_SPEED.MAX) {
+            state.paintingSpeed = speed;
+            speedSlider.value = speed;
+            saveBotSettings();
+          }
+        });
+        
+        speedInput.addEventListener('change', (e) => {
+          const speed = parseInt(e.target.value, 10);
+          const min = CONFIG.PAINTING_SPEED.MIN;
+          const max = CONFIG.PAINTING_SPEED.MAX;
+          
+          if (speed < min) {
+            e.target.value = min;
+            state.paintingSpeed = min;
+            speedSlider.value = min;
+          } else if (speed > max) {
+            e.target.value = max;
+            state.paintingSpeed = max;
+            speedSlider.value = max;
+          }
           saveBotSettings();
         });
       }
@@ -5096,6 +5151,7 @@
 
       if (cooldownSlider.max !== state.maxCharges) {
         cooldownSlider.max = state.maxCharges;
+        syncCooldownInputAttributes();
       }
 
       let imageStatsHTML = '';
@@ -6582,19 +6638,65 @@
 
     setTimeout(checkSavedProgress, 1000);
 
-    if (cooldownSlider && cooldownValue) {
+    const cooldownInput = document.querySelector('#cooldownInput');
+    
+    if (cooldownSlider && cooldownInput) {
       cooldownSlider.addEventListener('input', (e) => {
         const threshold = parseInt(e.target.value);
         state.cooldownChargeThreshold = threshold;
-        cooldownValue.textContent = threshold;
+        cooldownInput.value = threshold;
         saveBotSettings();
         NotificationManager.resetEdgeTracking(); // prevent spurious notify after threshold change
       });
     }
 
+    // Add event handler for cooldown input field
+    if (cooldownInput && cooldownSlider) {
+      cooldownInput.addEventListener('input', (e) => {
+        const threshold = parseInt(e.target.value);
+        if (threshold >= 1 && threshold <= cooldownSlider.max) {
+          state.cooldownChargeThreshold = threshold;
+          cooldownSlider.value = threshold;
+          saveBotSettings();
+          NotificationManager.resetEdgeTracking();
+        }
+      });
+      
+      cooldownInput.addEventListener('change', (e) => {
+        const threshold = parseInt(e.target.value);
+        const min = parseInt(cooldownSlider.min);
+        const max = parseInt(cooldownSlider.max);
+        
+        if (threshold < min) {
+          e.target.value = min;
+          state.cooldownChargeThreshold = min;
+          cooldownSlider.value = min;
+        } else if (threshold > max) {
+          e.target.value = max;
+          state.cooldownChargeThreshold = max;
+          cooldownSlider.value = max;
+        }
+        saveBotSettings();
+        NotificationManager.resetEdgeTracking();
+      });
+    }
+
+    // Sync input field attributes initially
+    syncCooldownInputAttributes();
+
     loadBotSettings();
     // Ensure notification poller reflects current settings
     NotificationManager.syncFromState();
+  }
+
+  // Helper function to sync cooldown input field attributes with slider
+  function syncCooldownInputAttributes() {
+    const cooldownSlider = document.querySelector('#cooldownSlider');
+    const cooldownInput = document.querySelector('#cooldownInput');
+    if (cooldownSlider && cooldownInput) {
+      cooldownInput.min = cooldownSlider.min;
+      cooldownInput.max = cooldownSlider.max;
+    }
   }
 
   function getMsToTargetCharges(current, target, cooldown, intervalMs = 0) {
@@ -7474,8 +7576,8 @@
 
       const speedSlider = document.getElementById('speedSlider');
       if (speedSlider) speedSlider.value = state.paintingSpeed;
-      const speedValue = document.getElementById('speedValue');
-      if (speedValue) speedValue.textContent = `${state.paintingSpeed} (batch size)`;
+      const speedInput = document.getElementById('speedInput');
+      if (speedInput) speedInput.value = state.paintingSpeed;
 
       const enableSpeedToggle = document.getElementById('enableSpeedToggle');
       if (enableSpeedToggle) enableSpeedToggle.checked = CONFIG.PAINTING_SPEED_ENABLED;
@@ -7508,8 +7610,15 @@
 
       const cooldownSlider = document.getElementById('cooldownSlider');
       if (cooldownSlider) cooldownSlider.value = state.cooldownChargeThreshold;
-      const cooldownValue = document.getElementById('cooldownValue');
-      if (cooldownValue) cooldownValue.textContent = state.cooldownChargeThreshold;
+      const cooldownInput = document.getElementById('cooldownInput');
+      if (cooldownInput) {
+        cooldownInput.value = state.cooldownChargeThreshold;
+        // Sync min/max attributes with the slider
+        if (cooldownSlider) {
+          cooldownInput.min = cooldownSlider.min;
+          cooldownInput.max = cooldownSlider.max;
+        }
+      }
 
       const overlayOpacitySlider = document.getElementById('overlayOpacitySlider');
       if (overlayOpacitySlider) overlayOpacitySlider.value = state.overlayOpacity;

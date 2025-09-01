@@ -3,14 +3,24 @@
 
 .wplace-theme-minecraft {
   /* === CORE MINECRAFT COLORS === */
+  /* Updated to use authentic Minecraft colors from reference images */
   --wplace-primary: #8b4513; /* Dirt brown */
   --wplace-secondary: #654321; /* Darker dirt */
   --wplace-accent: #a0522d; /* Sienna brown */
   --wplace-text: #ffffff; /* White text */
-  --wplace-highlight: #32cd32; /* Lime green (grass) */
+  --wplace-highlight: #00ff00; /* Bright Creeper green */
   --wplace-success: #228b22; /* Forest green */
   --wplace-error: #dc143c; /* Crimson red */
   --wplace-warning: #ffd700; /* Gold */
+
+  /* Added authentic Minecraft colors from reference images */
+  --wplace-diamond: #00ffff; /* Diamond cyan */
+  --wplace-creeper: #00ff00; /* Bright Creeper green */
+  --wplace-grass: #7cb342; /* Grass green */
+  --wplace-dirt: #8d6e63; /* Dirt brown */
+  --wplace-stone: #9e9e9e; /* Stone gray */
+  --wplace-wood: #8d6e63; /* Wood brown */
+  --wplace-crafting: #c6c6c6; /* Crafting table gray */
 
   /* === MINECRAFT UI PROPERTIES === */
   --wplace-radius: 0px; /* No rounded corners - blocky! */
@@ -18,98 +28,75 @@
   --wplace-border-style: solid;
   --wplace-border-width: 3px;
   --wplace-border-color: #2f4f2f; /* Dark slate gray */
-  --wplace-shadow: 4px 4px 0px #000000, 2px 2px 0px #333333;
+  /* Enhanced shadow to be more blocky and prominent */
+  --wplace-shadow: 4px 4px 0px #000000, 2px 2px 0px #333333, 1px 1px 0px #555555;
   --wplace-backdrop: none;
   --wplace-font: "Courier New", "Monaco", monospace;
-
-  /* === Z-INDEX LAYERS === */
-  --wplace-z-overlay: 10000;
-  --wplace-z-alert: 10002;
-  --wplace-z-settings: 10002;
-
-  /* === FEATURE TOGGLES === */
-  --wplace-scanline: 0;
-  --wplace-pixel-blink: 1;
-
-  /* === MINECRAFT ICON COLORS === */
-  --wplace-icon-primary: #32cd32; /* Grass green */
-  --wplace-icon-secondary: #8fbc8f; /* Dark sea green */
-  --wplace-icon-palette: #deb887; /* Burlywood */
-
-  /* === ADDITIONAL MINECRAFT COLORS === */
-  --wplace-danger: #b22222; /* Fire brick */
-  --wplace-danger-dark: #8b0000; /* Dark red */
-  --wplace-muted-text: rgba(255, 255, 255, 0.7);
-  --wplace-highlight-secondary: #9acd32; /* Yellow green */
-
-  /* === TEXT VARIANTS === */
-  --wplace-text-secondary: rgba(255, 255, 255, 0.9);
-  --wplace-text-muted: rgba(255, 255, 255, 0.7);
-  --wplace-text-dim: rgba(255, 255, 255, 0.6);
-  --wplace-text-faded: rgba(255, 255, 255, 0.8);
-
-  /* === BACKGROUND VARIANTS === */
-  --wplace-bg-input: #696969; /* Dim gray (stone) */
-  --wplace-bg-subtle: #708090; /* Slate gray */
-  --wplace-bg-faint: #778899; /* Light slate gray */
-  --wplace-bg-ghost: #808080; /* Gray */
-  --wplace-bg-whisper: #a9a9a9; /* Dark gray */
-
-  /* === BORDER VARIANTS === */
-  --wplace-border-subtle: #2f4f2f; /* Dark slate gray */
-  --wplace-border-faint: #556b2f; /* Dark olive green */
-  --wplace-border-ghost: #6b8e23; /* Olive drab */
-  --wplace-border-ultra-faint: #808000; /* Olive */
-
-  /* === SHADOW VARIANTS === */
-  --wplace-shadow-drag: 6px 6px 0px #000000, 3px 3px 0px #333333;
-  --wplace-shadow-notification: 4px 4px 0px #000000, 2px 2px 0px #333333;
-  --wplace-shadow-slider-thumb: 2px 2px 0px #000000, 1px 1px 0px #333333;
-  --wplace-shadow-slider-hover: 3px 3px 0px #000000, 2px 2px 0px #333333;
-
-  /* === ANIMATION COLORS === */
-  --wplace-pulse-start: rgba(50, 205, 50, 0.8);
-  --wplace-pulse-mid: rgba(50, 205, 50, 0);
-  --wplace-pulse-end: rgba(50, 205, 50, 0);
-
-  /* === SLIDER COLORS === */
-  --wplace-slider-thumb-bg: #32cd32;
-  --wplace-slider-track-bg: linear-gradient(to right, #228b22 0%, #32cd32 100%);
 }
 
 /* === MAIN CONTAINER STYLING === */
 .wplace-theme-minecraft #wplace-image-bot-container {
-  background: linear-gradient(135deg, #8b4513 0%, #a0522d 50%, #654321 100%) !important;
+  /* Enhanced gradient with more authentic Minecraft dirt colors */
+  background: linear-gradient(135deg, #8d6e63 0%, #6d4c41 25%, #5d4037 50%, #4e342e 75%, #3e2723 100%) !important;
   border: 3px solid #2f4f2f !important;
   border-radius: 0 !important;
-  box-shadow: 4px 4px 0px #000000, 2px 2px 0px #333333 !important;
+  /* Added more prominent blocky shadow */
+  box-shadow: 6px 6px 0px #000000, 4px 4px 0px #333333, 2px 2px 0px #555555 !important;
   font-family: "Courier New", "Monaco", monospace !important;
   color: var(--wplace-text) !important;
   image-rendering: pixelated !important;
+  /* Added subtle texture pattern */
+  background-image: repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 2px,
+      rgba(0, 0, 0, 0.1) 2px,
+      rgba(0, 0, 0, 0.1) 4px
+    ),
+    repeating-linear-gradient(
+      -45deg,
+      transparent,
+      transparent 2px,
+      rgba(255, 255, 255, 0.05) 2px,
+      rgba(255, 255, 255, 0.05) 4px
+    );
 }
 
 .wplace-theme-minecraft #wplace-stats-container {
-  background: linear-gradient(135deg, #654321 0%, #8b4513 50%, #a0522d 100%) !important;
+  /* Enhanced with grass-like gradient */
+  background: linear-gradient(135deg, #7cb342 0%, #689f38 25%, #558b2f 50%, #33691e 75%, #1b5e20 100%) !important;
   border: 3px solid #2f4f2f !important;
   border-radius: 0 !important;
-  box-shadow: 4px 4px 0px #000000, 2px 2px 0px #333333 !important;
+  box-shadow: 6px 6px 0px #000000, 4px 4px 0px #333333, 2px 2px 0px #555555 !important;
   font-family: "Courier New", "Monaco", monospace !important;
   color: var(--wplace-text) !important;
   position: fixed !important;
   overflow: hidden !important;
   z-index: 9998 !important;
   image-rendering: pixelated !important;
+  /* Added grass texture pattern */
+  background-image: repeating-linear-gradient(
+    90deg,
+    transparent,
+    transparent 8px,
+    rgba(0, 0, 0, 0.1) 8px,
+    rgba(0, 0, 0, 0.1) 16px
+  );
 }
 
 /* === HEADER STYLING === */
 .wplace-theme-minecraft .wplace-header {
-  background: linear-gradient(135deg, #2f4f2f 0%, #556b2f 100%) !important;
+  /* Updated to use diamond cyan accent */
+  background: linear-gradient(135deg, #00ffff 0%, #00e5e5 50%, #00cccc 100%) !important;
   border-bottom: 3px solid #000000 !important;
-  color: var(--wplace-highlight) !important;
-  text-shadow: 2px 2px 0px #000000 !important;
+  color: #000000 !important;
+  text-shadow: 2px 2px 0px #ffffff !important;
   font-family: "Courier New", "Monaco", monospace !important;
   font-weight: bold !important;
   text-transform: uppercase !important;
+  /* Added diamond-like sparkle effect */
+  background-image: radial-gradient(circle at 25% 25%, rgba(255, 255, 255, 0.8) 1px, transparent 1px),
+    radial-gradient(circle at 75% 75%, rgba(255, 255, 255, 0.6) 1px, transparent 1px);
 }
 
 /* === SECTION STYLING === */
@@ -164,10 +151,11 @@
 
 /* === BUTTON VARIANTS === */
 .wplace-theme-minecraft .wplace-btn-start {
-  background: linear-gradient(135deg, #228b22 0%, #32cd32 50%, #9acd32 100%) !important;
+  /* Updated to use bright Creeper green */
+  background: linear-gradient(135deg, #00ff00 0%, #00e600 50%, #00cc00 100%) !important;
   border-color: #006400 !important;
-  color: white !important;
-  text-shadow: 2px 2px 0px #000000 !important;
+  color: #000000 !important;
+  text-shadow: 2px 2px 0px #ffffff !important;
 }
 
 .wplace-theme-minecraft .wplace-btn-stop {
@@ -178,24 +166,26 @@
 }
 
 .wplace-theme-minecraft .wplace-btn-upload {
-  background: linear-gradient(135deg, #deb887 0%, #f4a460 50%, #d2b48c 100%) !important;
-  border: 2px dashed #8b4513 !important;
-  color: #654321 !important;
-  text-shadow: 1px 1px 0px #ffffff !important;
+  /* Updated to use wood texture colors */
+  background: linear-gradient(135deg, #8d6e63 0%, #6d4c41 50%, #5d4037 100%) !important;
+  border: 2px dashed #3e2723 !important;
+  color: #ffffff !important;
+  text-shadow: 2px 2px 0px #000000 !important;
 }
 
 .wplace-theme-minecraft .wplace-btn-select {
-  background: linear-gradient(135deg, #32cd32 0%, #9acd32 50%, #adff2f 100%) !important;
-  border-color: #228b22 !important;
-  color: white !important;
-  text-shadow: 2px 2px 0px #000000 !important;
+  /* Updated to use diamond cyan */
+  background: linear-gradient(135deg, #00ffff 0%, #00e5e5 50%, #00cccc 100%) !important;
+  border-color: #008b8b !important;
+  color: #000000 !important;
+  text-shadow: 2px 2px 0px #ffffff !important;
 }
 
 .wplace-theme-minecraft .wplace-btn-file {
   background: linear-gradient(135deg, #ffd700 0%, #ffa500 50%, #ff8c00 100%) !important;
   border-color: #b8860b !important;
-  color: white !important;
-  text-shadow: 2px 2px 0px #000000 !important;
+  color: #000000 !important;
+  text-shadow: 2px 2px 0px #ffffff !important;
 }
 
 /* === PROGRESS BAR STYLING === */
@@ -204,12 +194,30 @@
   border: 2px solid #000000 !important;
   border-radius: 0 !important;
   box-shadow: inset 2px 2px 0px #000000 !important;
+  /* Added inventory slot-like styling */
+  background-image: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 4px,
+    rgba(255, 255, 255, 0.1) 4px,
+    rgba(255, 255, 255, 0.1) 8px
+  );
 }
 
 .wplace-theme-minecraft .wplace-progress-bar {
-  background: linear-gradient(90deg, #228b22 0%, #32cd32 50%, #9acd32 100%) !important;
+  /* Updated to use Creeper green gradient */
+  background: linear-gradient(90deg, #00ff00 0%, #00e600 50%, #00cc00 100%) !important;
   box-shadow: none !important;
   image-rendering: pixelated !important;
+  /* Added animated progress effect */
+  background-image: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 8px,
+    rgba(255, 255, 255, 0.3) 8px,
+    rgba(255, 255, 255, 0.3) 16px
+  );
+  animation: minecraft-progress 1s linear infinite;
 }
 
 /* === STATUS INDICATORS === */
@@ -280,10 +288,11 @@
 }
 
 .wplace-theme-minecraft .wplace-settings-section-wrapper {
-  background: rgba(105, 105, 105, 0.3) !important;
-  border: 2px solid #2f4f2f !important;
+  background: linear-gradient(135deg, #c6c6c6 0%, #b0b0b0 100%),
+    repeating-linear-gradient(45deg, transparent, transparent 4px, rgba(0, 0, 0, 0.1) 4px, rgba(0, 0, 0, 0.1) 8px) !important;
+  border: 3px solid #2f4f2f !important;
   border-radius: 0 !important;
-  box-shadow: 2px 2px 0px #000000 !important;
+  box-shadow: 4px 4px 0px #000000, 2px 2px 0px #333333, inset 1px 1px 0px rgba(255, 255, 255, 0.3) !important;
 }
 
 .wplace-theme-minecraft .wplace-settings-select {
@@ -364,7 +373,8 @@
   left: 0;
   right: 0;
   height: 4px;
-  background: repeating-linear-gradient(90deg, #32cd32 0px, #32cd32 8px, #228b22 8px, #228b22 16px);
+  /* Updated to use authentic Creeper green */
+  background: repeating-linear-gradient(90deg, #00ff00 0px, #00ff00 8px, #00e600 8px, #00e600 16px);
   z-index: 1;
   pointer-events: none;
   animation: minecraft-scroll 2s linear infinite;
@@ -378,7 +388,8 @@
   left: 0;
   right: 0;
   height: 4px;
-  background: repeating-linear-gradient(90deg, #8b4513 0px, #8b4513 8px, #654321 8px, #654321 16px);
+  /* Updated to use grass block colors */
+  background: repeating-linear-gradient(90deg, #7cb342 0px, #7cb342 8px, #689f38 8px, #689f38 16px);
   z-index: 1;
   pointer-events: none;
   animation: minecraft-scroll 3s linear infinite;
@@ -386,6 +397,25 @@
 }
 
 /* === MINECRAFT ANIMATIONS === */
+@keyframes minecraft-progress {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 16px 0;
+  }
+}
+
+@keyframes minecraft-sparkle {
+  0%,
+  100% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
 @keyframes minecraft-scroll {
   0% {
     transform: translateX(-16px);
@@ -417,29 +447,38 @@
 }
 
 /* === ICON COLORS === */
+/* Updated icon colors to use authentic Minecraft palette */
 .wplace-theme-minecraft .wplace-icon-key {
   color: #ffd700;
+  filter: drop-shadow(1px 1px 0px #000000);
 }
 .wplace-theme-minecraft .wplace-icon-robot {
-  color: #32cd32;
+  color: #00ffff;
+  filter: drop-shadow(1px 1px 0px #000000);
 }
 .wplace-theme-minecraft .wplace-icon-speed {
-  color: #32cd32;
+  color: #00ff00;
+  filter: drop-shadow(1px 1px 0px #000000);
 }
 .wplace-theme-minecraft .wplace-icon-bell {
   color: #ffd700;
+  filter: drop-shadow(1px 1px 0px #000000);
 }
 .wplace-theme-minecraft .wplace-icon-palette {
-  color: #deb887;
+  color: #8d6e63;
+  filter: drop-shadow(1px 1px 0px #000000);
 }
 .wplace-theme-minecraft .wplace-icon-globe {
-  color: #9acd32;
+  color: #7cb342;
+  filter: drop-shadow(1px 1px 0px #000000);
 }
 .wplace-theme-minecraft .wplace-icon-paint {
-  color: #32cd32;
+  color: #00ff00;
+  filter: drop-shadow(1px 1px 0px #000000);
 }
 .wplace-theme-minecraft .wplace-icon-eye {
-  color: var(--wplace-highlight);
+  color: #00ffff;
+  filter: drop-shadow(1px 1px 0px #000000);
 }
 
 /* === TURNSTILE/CLOUDFLARE OVERLAY === */
@@ -470,27 +509,22 @@
 
 .wplace-theme-minecraft .wplace-turnstile-hide-btn:hover {
   background: rgba(169, 169, 169, 0.3) !important;
-  box-shadow: 3px 3px 0px #000000 !important;
+  box-shadow: 3px 3px 0px #000000, 1px 1px 0px #333333 !important;
 }
 
 /* === COLOR SWATCHES === */
 .wplace-theme-minecraft .wplace-color-swatch {
-  border: 2px solid #2f4f2f !important;
+  border: 3px solid #2f4f2f !important;
   border-radius: 0 !important;
-  box-shadow: 2px 2px 0px #000000 !important;
+  box-shadow: 3px 3px 0px #000000, inset 1px 1px 0px rgba(255, 255, 255, 0.3), inset -1px -1px 0px rgba(0, 0, 0, 0.3) !important;
   image-rendering: pixelated !important;
+  position: relative;
 }
 
 .wplace-theme-minecraft .wplace-color-swatch:hover {
-  box-shadow: 3px 3px 0px #000000, 1px 1px 0px #333333 !important;
+  box-shadow: 4px 4px 0px #000000, 2px 2px 0px #333333, inset 2px 2px 0px rgba(255, 255, 255, 0.4), inset -2px -2px 0px
+    rgba(0, 0, 0, 0.4) !important;
   transform: translate(-1px, -1px);
-}
-
-.wplace-theme-minecraft .wplace-stat-colors-grid {
-  background: rgba(47, 79, 47, 0.3) !important;
-  border-radius: 0 !important;
-  border: 2px solid #2f4f2f !important;
-  box-shadow: inset 2px 2px 0px #000000 !important;
 }
 
 /* === ADDITIONAL MINECRAFT STYLING === */
@@ -519,4 +553,14 @@
   text-shadow: 1px 1px 0px #000000 !important;
   font-weight: bold !important;
   text-transform: uppercase !important;
+}
+
+/* Enhanced stat grid with crafting table aesthetic */
+.wplace-theme-minecraft .wplace-stat-colors-grid {
+  background: linear-gradient(135deg, #c6c6c6 0%, #a0a0a0 100%),
+    repeating-linear-gradient(0deg, transparent, transparent 16px, rgba(0, 0, 0, 0.2) 16px, rgba(0, 0, 0, 0.2) 17px),
+    repeating-linear-gradient(90deg, transparent, transparent 16px, rgba(0, 0, 0, 0.2) 16px, rgba(0, 0, 0, 0.2) 17px) !important;
+  border-radius: 0 !important;
+  border: 3px solid #2f4f2f !important;
+  box-shadow: inset 3px 3px 0px #000000, inset -1px -1px 0px rgba(255, 255, 255, 0.3) !important;
 }

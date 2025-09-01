@@ -1,0 +1,522 @@
+/* WPlace Auto-Image Bot - Minecraft Theme */
+/* Blocky, pixelated aesthetic inspired by Minecraft */
+
+.wplace-theme-minecraft {
+  /* === CORE MINECRAFT COLORS === */
+  --wplace-primary: #8b4513; /* Dirt brown */
+  --wplace-secondary: #654321; /* Darker dirt */
+  --wplace-accent: #a0522d; /* Sienna brown */
+  --wplace-text: #ffffff; /* White text */
+  --wplace-highlight: #32cd32; /* Lime green (grass) */
+  --wplace-success: #228b22; /* Forest green */
+  --wplace-error: #dc143c; /* Crimson red */
+  --wplace-warning: #ffd700; /* Gold */
+
+  /* === MINECRAFT UI PROPERTIES === */
+  --wplace-radius: 0px; /* No rounded corners - blocky! */
+  --wplace-btn-radius: 0px;
+  --wplace-border-style: solid;
+  --wplace-border-width: 3px;
+  --wplace-border-color: #2f4f2f; /* Dark slate gray */
+  --wplace-shadow: 4px 4px 0px #000000, 2px 2px 0px #333333;
+  --wplace-backdrop: none;
+  --wplace-font: "Courier New", "Monaco", monospace;
+
+  /* === Z-INDEX LAYERS === */
+  --wplace-z-overlay: 10000;
+  --wplace-z-alert: 10002;
+  --wplace-z-settings: 10002;
+
+  /* === FEATURE TOGGLES === */
+  --wplace-scanline: 0;
+  --wplace-pixel-blink: 1;
+
+  /* === MINECRAFT ICON COLORS === */
+  --wplace-icon-primary: #32cd32; /* Grass green */
+  --wplace-icon-secondary: #8fbc8f; /* Dark sea green */
+  --wplace-icon-palette: #deb887; /* Burlywood */
+
+  /* === ADDITIONAL MINECRAFT COLORS === */
+  --wplace-danger: #b22222; /* Fire brick */
+  --wplace-danger-dark: #8b0000; /* Dark red */
+  --wplace-muted-text: rgba(255, 255, 255, 0.7);
+  --wplace-highlight-secondary: #9acd32; /* Yellow green */
+
+  /* === TEXT VARIANTS === */
+  --wplace-text-secondary: rgba(255, 255, 255, 0.9);
+  --wplace-text-muted: rgba(255, 255, 255, 0.7);
+  --wplace-text-dim: rgba(255, 255, 255, 0.6);
+  --wplace-text-faded: rgba(255, 255, 255, 0.8);
+
+  /* === BACKGROUND VARIANTS === */
+  --wplace-bg-input: #696969; /* Dim gray (stone) */
+  --wplace-bg-subtle: #708090; /* Slate gray */
+  --wplace-bg-faint: #778899; /* Light slate gray */
+  --wplace-bg-ghost: #808080; /* Gray */
+  --wplace-bg-whisper: #a9a9a9; /* Dark gray */
+
+  /* === BORDER VARIANTS === */
+  --wplace-border-subtle: #2f4f2f; /* Dark slate gray */
+  --wplace-border-faint: #556b2f; /* Dark olive green */
+  --wplace-border-ghost: #6b8e23; /* Olive drab */
+  --wplace-border-ultra-faint: #808000; /* Olive */
+
+  /* === SHADOW VARIANTS === */
+  --wplace-shadow-drag: 6px 6px 0px #000000, 3px 3px 0px #333333;
+  --wplace-shadow-notification: 4px 4px 0px #000000, 2px 2px 0px #333333;
+  --wplace-shadow-slider-thumb: 2px 2px 0px #000000, 1px 1px 0px #333333;
+  --wplace-shadow-slider-hover: 3px 3px 0px #000000, 2px 2px 0px #333333;
+
+  /* === ANIMATION COLORS === */
+  --wplace-pulse-start: rgba(50, 205, 50, 0.8);
+  --wplace-pulse-mid: rgba(50, 205, 50, 0);
+  --wplace-pulse-end: rgba(50, 205, 50, 0);
+
+  /* === SLIDER COLORS === */
+  --wplace-slider-thumb-bg: #32cd32;
+  --wplace-slider-track-bg: linear-gradient(to right, #228b22 0%, #32cd32 100%);
+}
+
+/* === MAIN CONTAINER STYLING === */
+.wplace-theme-minecraft #wplace-image-bot-container {
+  background: linear-gradient(135deg, #8b4513 0%, #a0522d 50%, #654321 100%) !important;
+  border: 3px solid #2f4f2f !important;
+  border-radius: 0 !important;
+  box-shadow: 4px 4px 0px #000000, 2px 2px 0px #333333 !important;
+  font-family: "Courier New", "Monaco", monospace !important;
+  color: var(--wplace-text) !important;
+  image-rendering: pixelated !important;
+}
+
+.wplace-theme-minecraft #wplace-stats-container {
+  background: linear-gradient(135deg, #654321 0%, #8b4513 50%, #a0522d 100%) !important;
+  border: 3px solid #2f4f2f !important;
+  border-radius: 0 !important;
+  box-shadow: 4px 4px 0px #000000, 2px 2px 0px #333333 !important;
+  font-family: "Courier New", "Monaco", monospace !important;
+  color: var(--wplace-text) !important;
+  position: fixed !important;
+  overflow: hidden !important;
+  z-index: 9998 !important;
+  image-rendering: pixelated !important;
+}
+
+/* === HEADER STYLING === */
+.wplace-theme-minecraft .wplace-header {
+  background: linear-gradient(135deg, #2f4f2f 0%, #556b2f 100%) !important;
+  border-bottom: 3px solid #000000 !important;
+  color: var(--wplace-highlight) !important;
+  text-shadow: 2px 2px 0px #000000 !important;
+  font-family: "Courier New", "Monaco", monospace !important;
+  font-weight: bold !important;
+  text-transform: uppercase !important;
+}
+
+/* === SECTION STYLING === */
+.wplace-theme-minecraft .wplace-section {
+  background: rgba(105, 105, 105, 0.3) !important;
+  border: 2px solid #2f4f2f !important;
+  border-radius: 0 !important;
+  box-shadow: 2px 2px 0px #000000 !important;
+}
+
+.wplace-theme-minecraft .wplace-status-section {
+  background: rgba(105, 105, 105, 0.3) !important;
+  border: 2px solid #2f4f2f !important;
+  border-radius: 0 !important;
+  box-shadow: 2px 2px 0px #000000 !important;
+}
+
+.wplace-theme-minecraft .wplace-section-title {
+  color: var(--wplace-highlight) !important;
+  text-shadow: 2px 2px 0px #000000 !important;
+  text-transform: uppercase !important;
+  font-family: "Courier New", "Monaco", monospace !important;
+  font-weight: bold !important;
+  font-size: 12px !important;
+}
+
+/* === BUTTON STYLING === */
+.wplace-theme-minecraft .wplace-btn {
+  background: linear-gradient(135deg, #696969 0%, #808080 50%, #a9a9a9 100%) !important;
+  border: 2px solid #2f4f2f !important;
+  border-radius: 0 !important;
+  color: var(--wplace-text) !important;
+  text-shadow: 1px 1px 0px #000000 !important;
+  font-family: "Courier New", "Monaco", monospace !important;
+  font-weight: bold !important;
+  text-transform: uppercase !important;
+  box-shadow: 2px 2px 0px #000000 !important;
+  transition: all 0.1s ease !important;
+  image-rendering: pixelated !important;
+}
+
+.wplace-theme-minecraft .wplace-btn:hover:not(:disabled) {
+  background: linear-gradient(135deg, #a9a9a9 0%, #c0c0c0 50%, #d3d3d3 100%) !important;
+  box-shadow: 3px 3px 0px #000000, 1px 1px 0px #333333 !important;
+  transform: translate(-1px, -1px) !important;
+}
+
+.wplace-theme-minecraft .wplace-btn:active:not(:disabled) {
+  box-shadow: 1px 1px 0px #000000 !important;
+  transform: translate(1px, 1px) !important;
+}
+
+/* === BUTTON VARIANTS === */
+.wplace-theme-minecraft .wplace-btn-start {
+  background: linear-gradient(135deg, #228b22 0%, #32cd32 50%, #9acd32 100%) !important;
+  border-color: #006400 !important;
+  color: white !important;
+  text-shadow: 2px 2px 0px #000000 !important;
+}
+
+.wplace-theme-minecraft .wplace-btn-stop {
+  background: linear-gradient(135deg, #b22222 0%, #dc143c 50%, #ff6347 100%) !important;
+  border-color: #8b0000 !important;
+  color: white !important;
+  text-shadow: 2px 2px 0px #000000 !important;
+}
+
+.wplace-theme-minecraft .wplace-btn-upload {
+  background: linear-gradient(135deg, #deb887 0%, #f4a460 50%, #d2b48c 100%) !important;
+  border: 2px dashed #8b4513 !important;
+  color: #654321 !important;
+  text-shadow: 1px 1px 0px #ffffff !important;
+}
+
+.wplace-theme-minecraft .wplace-btn-select {
+  background: linear-gradient(135deg, #32cd32 0%, #9acd32 50%, #adff2f 100%) !important;
+  border-color: #228b22 !important;
+  color: white !important;
+  text-shadow: 2px 2px 0px #000000 !important;
+}
+
+.wplace-theme-minecraft .wplace-btn-file {
+  background: linear-gradient(135deg, #ffd700 0%, #ffa500 50%, #ff8c00 100%) !important;
+  border-color: #b8860b !important;
+  color: white !important;
+  text-shadow: 2px 2px 0px #000000 !important;
+}
+
+/* === PROGRESS BAR STYLING === */
+.wplace-theme-minecraft .wplace-progress {
+  background: #2f2f2f !important;
+  border: 2px solid #000000 !important;
+  border-radius: 0 !important;
+  box-shadow: inset 2px 2px 0px #000000 !important;
+}
+
+.wplace-theme-minecraft .wplace-progress-bar {
+  background: linear-gradient(90deg, #228b22 0%, #32cd32 50%, #9acd32 100%) !important;
+  box-shadow: none !important;
+  image-rendering: pixelated !important;
+}
+
+/* === STATUS INDICATORS === */
+.wplace-theme-minecraft .wplace-stat-value {
+  color: var(--wplace-highlight) !important;
+  text-shadow: 2px 2px 0px #000000 !important;
+  font-weight: bold !important;
+}
+
+.wplace-theme-minecraft .status-success {
+  background: rgba(34, 139, 34, 0.2) !important;
+  border-color: var(--wplace-success) !important;
+  color: var(--wplace-success) !important;
+  box-shadow: 2px 2px 0px #000000 !important;
+  text-shadow: 1px 1px 0px #000000 !important;
+}
+
+.wplace-theme-minecraft .status-error {
+  background: rgba(178, 34, 34, 0.2) !important;
+  border-color: var(--wplace-error) !important;
+  color: var(--wplace-error) !important;
+  box-shadow: 2px 2px 0px #000000 !important;
+  text-shadow: 1px 1px 0px #000000 !important;
+}
+
+.wplace-theme-minecraft .status-default {
+  background: rgba(50, 205, 50, 0.2) !important;
+  border-color: var(--wplace-highlight) !important;
+  color: var(--wplace-highlight) !important;
+  text-shadow: 1px 1px 0px #000000 !important;
+}
+
+/* === SETTINGS DIALOG === */
+.wplace-theme-minecraft #wplace-settings-container {
+  background: linear-gradient(135deg, #8b4513 0%, #a0522d 50%, #654321 100%) !important;
+  border: 3px solid #2f4f2f !important;
+  border-radius: 0 !important;
+  box-shadow: 6px 6px 0px #000000, 3px 3px 0px #333333 !important;
+  font-family: "Courier New", "Monaco", monospace !important;
+  color: var(--wplace-text) !important;
+}
+
+.wplace-theme-minecraft .wplace-settings-header {
+  background: linear-gradient(135deg, #2f4f2f 0%, #556b2f 100%) !important;
+  border-bottom: 3px solid #000000 !important;
+}
+
+.wplace-theme-minecraft .wplace-settings-header h3 {
+  color: var(--wplace-highlight) !important;
+  text-shadow: 2px 2px 0px #000000 !important;
+  font-family: "Courier New", "Monaco", monospace !important;
+  font-size: 16px !important;
+  text-transform: uppercase !important;
+  font-weight: bold !important;
+}
+
+.wplace-theme-minecraft .wplace-settings-close-btn {
+  background: linear-gradient(135deg, #b22222 0%, #dc143c 100%) !important;
+  border: 2px solid #8b0000 !important;
+  border-radius: 0 !important;
+  color: white !important;
+  box-shadow: 2px 2px 0px #000000 !important;
+}
+
+.wplace-theme-minecraft .wplace-settings-close-btn:hover {
+  background: linear-gradient(135deg, #dc143c 0%, #ff6347 100%) !important;
+  box-shadow: 3px 3px 0px #000000 !important;
+}
+
+.wplace-theme-minecraft .wplace-settings-section-wrapper {
+  background: rgba(105, 105, 105, 0.3) !important;
+  border: 2px solid #2f4f2f !important;
+  border-radius: 0 !important;
+  box-shadow: 2px 2px 0px #000000 !important;
+}
+
+.wplace-theme-minecraft .wplace-settings-select {
+  background: #696969 !important;
+  border: 2px solid #2f4f2f !important;
+  border-radius: 0 !important;
+  color: var(--wplace-text) !important;
+  font-family: "Courier New", "Monaco", monospace !important;
+  font-weight: bold !important;
+  box-shadow: inset 1px 1px 0px #000000 !important;
+}
+
+.wplace-theme-minecraft .wplace-settings-section-label {
+  color: var(--wplace-highlight) !important;
+  text-shadow: 2px 2px 0px #000000 !important;
+  font-family: "Courier New", "Monaco", monospace !important;
+  font-size: 12px !important;
+  text-transform: uppercase !important;
+  font-weight: bold !important;
+}
+
+/* === SLIDER STYLING === */
+.wplace-theme-minecraft .wplace-speed-value {
+  background: linear-gradient(135deg, #32cd32 0%, #9acd32 100%) !important;
+  border: 2px solid #228b22 !important;
+  border-radius: 0 !important;
+  color: white !important;
+  text-shadow: 2px 2px 0px #000000 !important;
+  font-family: "Courier New", "Monaco", monospace !important;
+  font-weight: bold !important;
+  box-shadow: 2px 2px 0px #000000 !important;
+}
+
+.wplace-theme-minecraft .wplace-overlay-opacity-value {
+  background: linear-gradient(135deg, #696969 0%, #a9a9a9 100%) !important;
+  border: 2px solid #2f4f2f !important;
+  border-radius: 0 !important;
+  color: var(--wplace-text) !important;
+  text-shadow: 1px 1px 0px #000000 !important;
+  font-weight: bold !important;
+}
+
+.wplace-theme-minecraft .wplace-slider,
+.wplace-theme-minecraft .wplace-speed-slider,
+.wplace-theme-minecraft .wplace-overlay-opacity-slider {
+  background: #2f2f2f !important;
+  border: 2px solid #000000 !important;
+  border-radius: 0 !important;
+  box-shadow: inset 2px 2px 0px #000000 !important;
+}
+
+.wplace-theme-minecraft .wplace-slider::-webkit-slider-thumb,
+.wplace-theme-minecraft .wplace-speed-slider::-webkit-slider-thumb,
+.wplace-theme-minecraft .wplace-overlay-opacity-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 0 !important;
+  background: var(--wplace-slider-thumb-bg) !important;
+  border: 2px solid #000000 !important;
+  cursor: pointer;
+  transition: all 0.1s ease;
+  box-shadow: 2px 2px 0px #000000 !important;
+}
+
+.wplace-theme-minecraft .wplace-slider::-webkit-slider-thumb:hover,
+.wplace-theme-minecraft .wplace-speed-slider::-webkit-slider-thumb:hover,
+.wplace-theme-minecraft .wplace-overlay-opacity-slider::-webkit-slider-thumb:hover {
+  transform: scale(1.1);
+  box-shadow: 3px 3px 0px #000000 !important;
+}
+
+/* === MINECRAFT BLOCK PATTERN ANIMATION === */
+.wplace-theme-minecraft #wplace-image-bot-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: repeating-linear-gradient(90deg, #32cd32 0px, #32cd32 8px, #228b22 8px, #228b22 16px);
+  z-index: 1;
+  pointer-events: none;
+  animation: minecraft-scroll 2s linear infinite;
+  opacity: 0.8;
+}
+
+.wplace-theme-minecraft #wplace-stats-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: repeating-linear-gradient(90deg, #8b4513 0px, #8b4513 8px, #654321 8px, #654321 16px);
+  z-index: 1;
+  pointer-events: none;
+  animation: minecraft-scroll 3s linear infinite;
+  opacity: 0.8;
+}
+
+/* === MINECRAFT ANIMATIONS === */
+@keyframes minecraft-scroll {
+  0% {
+    transform: translateX(-16px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+}
+
+@keyframes minecraft-blink {
+  0%,
+  50% {
+    opacity: 1;
+  }
+  51%,
+  100% {
+    opacity: 0.6;
+  }
+}
+
+/* === RESIZE DIALOG === */
+.wplace-theme-minecraft .resize-container {
+  background: linear-gradient(135deg, #8b4513 0%, #a0522d 100%) !important;
+  border: 3px solid #2f4f2f !important;
+  border-radius: 0 !important;
+  box-shadow: 6px 6px 0px #000000, 3px 3px 0px #333333 !important;
+  font-family: "Courier New", "Monaco", monospace !important;
+  color: var(--wplace-text) !important;
+}
+
+/* === ICON COLORS === */
+.wplace-theme-minecraft .wplace-icon-key {
+  color: #ffd700;
+}
+.wplace-theme-minecraft .wplace-icon-robot {
+  color: #32cd32;
+}
+.wplace-theme-minecraft .wplace-icon-speed {
+  color: #32cd32;
+}
+.wplace-theme-minecraft .wplace-icon-bell {
+  color: #ffd700;
+}
+.wplace-theme-minecraft .wplace-icon-palette {
+  color: #deb887;
+}
+.wplace-theme-minecraft .wplace-icon-globe {
+  color: #9acd32;
+}
+.wplace-theme-minecraft .wplace-icon-paint {
+  color: #32cd32;
+}
+.wplace-theme-minecraft .wplace-icon-eye {
+  color: var(--wplace-highlight);
+}
+
+/* === TURNSTILE/CLOUDFLARE OVERLAY === */
+.wplace-theme-minecraft .wplace-turnstile-overlay {
+  background: rgba(139, 69, 19, 0.95) !important;
+  border-radius: 0 !important;
+  box-shadow: 6px 6px 0px #000000, 3px 3px 0px #333333 !important;
+  backdrop-filter: none !important;
+  border: 3px solid #2f4f2f !important;
+  color: var(--wplace-text) !important;
+  font-family: "Courier New", "Monaco", monospace !important;
+}
+
+.wplace-theme-minecraft .wplace-turnstile-title {
+  color: var(--wplace-highlight) !important;
+  text-shadow: 2px 2px 0px #000000 !important;
+  text-transform: uppercase !important;
+  font-weight: bold !important;
+}
+
+.wplace-theme-minecraft .wplace-turnstile-hide-btn {
+  color: var(--wplace-text) !important;
+  border: 2px solid #2f4f2f !important;
+  border-radius: 0 !important;
+  background: rgba(105, 105, 105, 0.3) !important;
+  box-shadow: 2px 2px 0px #000000 !important;
+}
+
+.wplace-theme-minecraft .wplace-turnstile-hide-btn:hover {
+  background: rgba(169, 169, 169, 0.3) !important;
+  box-shadow: 3px 3px 0px #000000 !important;
+}
+
+/* === COLOR SWATCHES === */
+.wplace-theme-minecraft .wplace-color-swatch {
+  border: 2px solid #2f4f2f !important;
+  border-radius: 0 !important;
+  box-shadow: 2px 2px 0px #000000 !important;
+  image-rendering: pixelated !important;
+}
+
+.wplace-theme-minecraft .wplace-color-swatch:hover {
+  box-shadow: 3px 3px 0px #000000, 1px 1px 0px #333333 !important;
+  transform: translate(-1px, -1px);
+}
+
+.wplace-theme-minecraft .wplace-stat-colors-grid {
+  background: rgba(47, 79, 47, 0.3) !important;
+  border-radius: 0 !important;
+  border: 2px solid #2f4f2f !important;
+  box-shadow: inset 2px 2px 0px #000000 !important;
+}
+
+/* === ADDITIONAL MINECRAFT STYLING === */
+.wplace-theme-minecraft * {
+  image-rendering: pixelated !important;
+  image-rendering: -moz-crisp-edges !important;
+  image-rendering: crisp-edges !important;
+}
+
+.wplace-theme-minecraft .wplace-color-item-name {
+  color: #ffffff !important;
+  font-weight: bold !important;
+  text-shadow: 2px 2px 0px #000000 !important;
+  text-transform: uppercase !important;
+}
+
+.wplace-theme-minecraft .wplace-color-label {
+  color: var(--wplace-highlight) !important;
+  font-weight: bold !important;
+  text-shadow: 2px 2px 0px #000000 !important;
+  text-transform: uppercase !important;
+}
+
+.wplace-theme-minecraft .wplace-stat-label {
+  color: var(--wplace-text) !important;
+  text-shadow: 1px 1px 0px #000000 !important;
+  font-weight: bold !important;
+  text-transform: uppercase !important;
+}

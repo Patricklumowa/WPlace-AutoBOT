@@ -202,7 +202,7 @@
         neon: '#32cd32',
         purple: '#9acd32',
         pink: '#deb887',
-        fontFamily: "'Courier New', 'Monaco', monospace",
+        fontFamily: "'Press Start 2P', 'Minecraft', 'PixelMix', 'DotGothic16', 'VT323', 'Courier New', 'Monaco', monospace",
         borderRadius: '0',
         borderStyle: 'solid',
         borderWidth: '3px',

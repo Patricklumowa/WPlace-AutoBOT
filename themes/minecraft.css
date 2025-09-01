@@ -48,7 +48,8 @@
   /* Enhanced shadow to be more blocky and prominent */
   --wplace-shadow: 4px 4px 0px #000000, 2px 2px 0px #333333, 1px 1px 0px #555555;
   --wplace-backdrop: none;
-  --wplace-font: "Courier New", "Monaco", monospace;
+  /* Updated font to match Neon theme with Press Start 2P */
+  --wplace-font: "Press Start 2P", monospace, "Courier New";
 
   /* Added dynamic shadow variants for enhanced visual effects */
   --wplace-shadow-drag: 8px 8px 0px #000000, 6px 6px 0px #333333, 4px 4px 0px #555555, 2px 2px 0px #777777;
@@ -69,7 +70,8 @@
   border-radius: 0 !important;
   /* Enhanced blocky shadow with more layers */
   box-shadow: 8px 8px 0px #000000, 6px 6px 0px #333333, 4px 4px 0px #555555, 2px 2px 0px #777777 !important;
-  font-family: "Courier New", "Monaco", monospace !important;
+  /* Updated font family to use Press Start 2P */
+  font-family: "Press Start 2P", monospace, "Courier New" !important;
   color: var(--wplace-text) !important;
   image-rendering: pixelated !important;
   /* Enhanced texture pattern with animated elements */
@@ -97,7 +99,8 @@
   border: 3px solid #2f4f2f !important;
   border-radius: 0 !important;
   box-shadow: 8px 8px 0px #000000, 6px 6px 0px #333333, 4px 4px 0px #555555, 2px 2px 0px #777777 !important;
-  font-family: "Courier New", "Monaco", monospace !important;
+  /* Updated font family to use Press Start 2P */
+  font-family: "Press Start 2P", monospace, "Courier New" !important;
   color: var(--wplace-text) !important;
   position: fixed !important;
   overflow: hidden !important;
@@ -121,7 +124,8 @@
   border-bottom: 3px solid #000000 !important;
   color: #000000 !important;
   text-shadow: 2px 2px 0px #ffffff, 0 0 10px rgba(255, 255, 255, 0.8) !important;
-  font-family: "Courier New", "Monaco", monospace !important;
+  /* Updated font family to use Press Start 2P */
+  font-family: "Press Start 2P", monospace, "Courier New" !important;
   font-weight: bold !important;
   text-transform: uppercase !important;
   /* Enhanced diamond-like sparkle effect with animation */
@@ -151,7 +155,8 @@
   color: var(--wplace-highlight) !important;
   text-shadow: 2px 2px 0px #000000 !important;
   text-transform: uppercase !important;
-  font-family: "Courier New", "Monaco", monospace !important;
+  /* Updated font family to use Press Start 2P */
+  font-family: "Press Start 2P", monospace, "Courier New" !important;
   font-weight: bold !important;
   font-size: 12px !important;
 }
@@ -163,7 +168,8 @@
   border-radius: 0 !important;
   color: var(--wplace-text) !important;
   text-shadow: 1px 1px 0px #000000 !important;
-  font-family: "Courier New", "Monaco", monospace !important;
+  /* Updated font family to use Press Start 2P */
+  font-family: "Press Start 2P", monospace, "Courier New" !important;
   font-weight: bold !important;
   text-transform: uppercase !important;
   box-shadow: 2px 2px 0px #000000 !important;
@@ -303,7 +309,8 @@
   border: 3px solid #2f4f2f !important;
   border-radius: 0 !important;
   box-shadow: 6px 6px 0px #000000, 3px 3px 0px #333333 !important;
-  font-family: "Courier New", "Monaco", monospace !important;
+  /* Updated font family to use Press Start 2P */
+  font-family: "Press Start 2P", monospace, "Courier New" !important;
   color: var(--wplace-text) !important;
 }
 
@@ -315,7 +322,8 @@
 .wplace-theme-minecraft .wplace-settings-header h3 {
   color: var(--wplace-highlight) !important;
   text-shadow: 2px 2px 0px #000000 !important;
-  font-family: "Courier New", "Monaco", monospace !important;
+  /* Updated font family to use Press Start 2P */
+  font-family: "Press Start 2P", monospace, "Courier New" !important;
   font-size: 16px !important;
   text-transform: uppercase !important;
   font-weight: bold !important;
@@ -347,7 +355,8 @@
   border: 2px solid #2f4f2f !important;
   border-radius: 0 !important;
   color: var(--wplace-text) !important;
-  font-family: "Courier New", "Monaco", monospace !important;
+  /* Updated font family to use Press Start 2P */
+  font-family: "Press Start 2P", monospace, "Courier New" !important;
   font-weight: bold !important;
   box-shadow: inset 1px 1px 0px #000000 !important;
 }
@@ -355,7 +364,8 @@
 .wplace-theme-minecraft .wplace-settings-section-label {
   color: var(--wplace-highlight) !important;
   text-shadow: 2px 2px 0px #000000 !important;
-  font-family: "Courier New", "Monaco", monospace !important;
+  /* Updated font family to use Press Start 2P */
+  font-family: "Press Start 2P", monospace, "Courier New" !important;
   font-size: 12px !important;
   text-transform: uppercase !important;
   font-weight: bold !important;
@@ -368,7 +378,8 @@
   border-radius: 0 !important;
   color: white !important;
   text-shadow: 2px 2px 0px #000000 !important;
-  font-family: "Courier New", "Monaco", monospace !important;
+  /* Updated font family to use Press Start 2P */
+  font-family: "Press Start 2P", monospace, "Courier New" !important;
   font-weight: bold !important;
   box-shadow: 2px 2px 0px #000000 !important;
 }
@@ -412,67 +423,104 @@
   box-shadow: 3px 3px 0px #000000 !important;
 }
 
-/* === MINECRAFT BLOCK PATTERN ANIMATION === */
-.wplace-theme-minecraft #wplace-image-bot-container::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 4px;
-  /* Updated to use authentic Creeper green */
-  background: repeating-linear-gradient(90deg, #00ff00 0px, #00ff00 8px, #00e600 8px, #00e600 16px);
-  z-index: 1;
-  pointer-events: none;
-  animation: minecraft-scroll 2s linear infinite;
-  opacity: 0.8;
-  box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+/* === TURNSTILE/CLOUDFLARE OVERLAY === */
+.wplace-theme-minecraft .wplace-turnstile-overlay {
+  background: rgba(139, 69, 19, 0.95) !important;
+  border-radius: 0 !important;
+  box-shadow: 6px 6px 0px #000000, 3px 3px 0px #333333 !important;
+  backdrop-filter: none !important;
+  border: 3px solid #2f4f2f !important;
+  color: var(--wplace-text) !important;
+  /* Updated font family to use Press Start 2P */
+  font-family: "Press Start 2P", monospace, "Courier New" !important;
 }
 
-.wplace-theme-minecraft #wplace-image-bot-container::after {
-  content: "";
-  position: absolute;
-  top: 10%;
-  left: 10%;
-  width: 4px;
-  height: 4px;
-  background: #00ff00;
-  border-radius: 0;
-  z-index: 1;
-  pointer-events: none;
-  animation: minecraft-particle-float 4s ease-in-out infinite;
-  box-shadow: 20px 30px 0 #00ffff, 40px 10px 0 #ffd700, 60px 50px 0 #00ff00, 80px 20px 0 #ff6347;
+/* === ICON COLORS === */
+/* Updated icon colors to use authentic Minecraft palette */
+.wplace-theme-minecraft .wplace-icon-key {
+  color: #ffd700;
+  filter: drop-shadow(1px 1px 0px #000000);
+}
+.wplace-theme-minecraft .wplace-icon-robot {
+  color: #00ffff;
+  filter: drop-shadow(1px 1px 0px #000000);
+}
+.wplace-theme-minecraft .wplace-icon-speed {
+  color: #00ff00;
+  filter: drop-shadow(1px 1px 0px #000000);
+}
+.wplace-theme-minecraft .wplace-icon-bell {
+  color: #ffd700;
+  filter: drop-shadow(1px 1px 0px #000000);
+}
+.wplace-theme-minecraft .wplace-icon-palette {
+  color: #8d6e63;
+  filter: drop-shadow(1px 1px 0px #000000);
+}
+.wplace-theme-minecraft .wplace-icon-globe {
+  color: #7cb342;
+  filter: drop-shadow(1px 1px 0px #000000);
+}
+.wplace-theme-minecraft .wplace-icon-paint {
+  color: #00ff00;
+  filter: drop-shadow(1px 1px 0px #000000);
+}
+.wplace-theme-minecraft .wplace-icon-eye {
+  color: #00ffff;
+  filter: drop-shadow(1px 1px 0px #000000);
 }
 
-.wplace-theme-minecraft #wplace-stats-container::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 4px;
-  /* Updated to use grass block colors */
-  background: repeating-linear-gradient(90deg, #7cb342 0px, #7cb342 8px, #689f38 8px, #689f38 16px);
-  z-index: 1;
-  pointer-events: none;
-  animation: minecraft-scroll 3s linear infinite;
-  opacity: 0.8;
-  box-shadow: 0 0 8px rgba(124, 179, 66, 0.4);
+/* === COLOR SWATCHES === */
+.wplace-theme-minecraft .wplace-color-swatch {
+  border: 3px solid #2f4f2f !important;
+  border-radius: 0 !important;
+  box-shadow: 3px 3px 0px #000000, inset 1px 1px 0px rgba(255, 255, 255, 0.3), inset -1px -1px 0px rgba(0, 0, 0, 0.3) !important;
+  image-rendering: pixelated !important;
+  position: relative;
 }
 
-.wplace-theme-minecraft #wplace-stats-container::after {
-  content: "";
-  position: absolute;
-  top: 15%;
-  right: 15%;
-  width: 3px;
-  height: 3px;
-  background: #7cb342;
-  border-radius: 0;
-  z-index: 1;
-  pointer-events: none;
-  animation: minecraft-grass-particle 3s ease-in-out infinite;
-  box-shadow: -15px 25px 0 #689f38, -30px 5px 0 #558b2f, -45px 35px 0 #7cb342;
+.wplace-theme-minecraft .wplace-color-swatch:hover {
+  box-shadow: 4px 4px 0px #000000, 2px 2px 0px #333333, inset 2px 2px 0px rgba(255, 255, 255, 0.4), inset -2px -2px 0px
+    rgba(0, 0, 0, 0.4) !important;
+  transform: translate(-1px, -1px);
+}
+
+/* === ADDITIONAL MINECRAFT STYLING === */
+.wplace-theme-minecraft * {
+  image-rendering: pixelated !important;
+  image-rendering: -moz-crisp-edges !important;
+  image-rendering: crisp-edges !important;
+}
+
+.wplace-theme-minecraft .wplace-color-item-name {
+  color: #ffffff !important;
+  font-weight: bold !important;
+  text-shadow: 2px 2px 0px #000000 !important;
+  text-transform: uppercase !important;
+}
+
+.wplace-theme-minecraft .wplace-color-label {
+  color: var(--wplace-highlight) !important;
+  font-weight: bold !important;
+  text-shadow: 2px 2px 0px #000000 !important;
+  text-transform: uppercase !important;
+}
+
+.wplace-theme-minecraft .wplace-stat-label {
+  color: var(--wplace-text) !important;
+  text-shadow: 1px 1px 0px #000000 !important;
+  font-weight: bold !important;
+  text-transform: uppercase !important;
+}
+
+/* Enhanced stat grid with crafting table aesthetic */
+.wplace-theme-minecraft .wplace-stat-colors-grid {
+  background: linear-gradient(135deg, #c6c6c6 0%, #a0a0a0 100%),
+    repeating-linear-gradient(0deg, transparent, transparent 16px, rgba(0, 0, 0, 0.2) 16px, rgba(0, 0, 0, 0.2) 17px),
+    repeating-linear-gradient(90deg, transparent, transparent 16px, rgba(0, 0, 0, 0.2) 16px, rgba(0, 0, 0, 0.2) 17px) !important;
+  border-radius: 0 !important;
+  border: 3px solid #2f4f2f !important;
+  box-shadow: inset 3px 3px 0px #000000, inset -1px -1px 0px rgba(255, 255, 255, 0.3) !important;
 }
 
 /* === MINECRAFT ANIMATIONS === */
@@ -638,123 +686,4 @@
   100% {
     opacity: 0.6;
   }
-}
-
-/* === ICON COLORS === */
-/* Updated icon colors to use authentic Minecraft palette */
-.wplace-theme-minecraft .wplace-icon-key {
-  color: #ffd700;
-  filter: drop-shadow(1px 1px 0px #000000);
-}
-.wplace-theme-minecraft .wplace-icon-robot {
-  color: #00ffff;
-  filter: drop-shadow(1px 1px 0px #000000);
-}
-.wplace-theme-minecraft .wplace-icon-speed {
-  color: #00ff00;
-  filter: drop-shadow(1px 1px 0px #000000);
-}
-.wplace-theme-minecraft .wplace-icon-bell {
-  color: #ffd700;
-  filter: drop-shadow(1px 1px 0px #000000);
-}
-.wplace-theme-minecraft .wplace-icon-palette {
-  color: #8d6e63;
-  filter: drop-shadow(1px 1px 0px #000000);
-}
-.wplace-theme-minecraft .wplace-icon-globe {
-  color: #7cb342;
-  filter: drop-shadow(1px 1px 0px #000000);
-}
-.wplace-theme-minecraft .wplace-icon-paint {
-  color: #00ff00;
-  filter: drop-shadow(1px 1px 0px #000000);
-}
-.wplace-theme-minecraft .wplace-icon-eye {
-  color: #00ffff;
-  filter: drop-shadow(1px 1px 0px #000000);
-}
-
-/* === TURNSTILE/CLOUDFLARE OVERLAY === */
-.wplace-theme-minecraft .wplace-turnstile-overlay {
-  background: rgba(139, 69, 19, 0.95) !important;
-  border-radius: 0 !important;
-  box-shadow: 6px 6px 0px #000000, 3px 3px 0px #333333 !important;
-  backdrop-filter: none !important;
-  border: 3px solid #2f4f2f !important;
-  color: var(--wplace-text) !important;
-  font-family: "Courier New", "Monaco", monospace !important;
-}
-
-.wplace-theme-minecraft .wplace-turnstile-title {
-  color: var(--wplace-highlight) !important;
-  text-shadow: 2px 2px 0px #000000 !important;
-  text-transform: uppercase !important;
-  font-weight: bold !important;
-}
-
-.wplace-theme-minecraft .wplace-turnstile-hide-btn {
-  color: var(--wplace-text) !important;
-  border: 2px solid #2f4f2f !important;
-  border-radius: 0 !important;
-  background: rgba(105, 105, 105, 0.3) !important;
-  box-shadow: 2px 2px 0px #000000 !important;
-}
-
-.wplace-theme-minecraft .wplace-turnstile-hide-btn:hover {
-  background: rgba(169, 169, 169, 0.3) !important;
-  box-shadow: 3px 3px 0px #000000, 1px 1px 0px #333333 !important;
-}
-
-/* === COLOR SWATCHES === */
-.wplace-theme-minecraft .wplace-color-swatch {
-  border: 3px solid #2f4f2f !important;
-  border-radius: 0 !important;
-  box-shadow: 3px 3px 0px #000000, inset 1px 1px 0px rgba(255, 255, 255, 0.3), inset -1px -1px 0px rgba(0, 0, 0, 0.3) !important;
-  image-rendering: pixelated !important;
-  position: relative;
-}
-
-.wplace-theme-minecraft .wplace-color-swatch:hover {
-  box-shadow: 4px 4px 0px #000000, 2px 2px 0px #333333, inset 2px 2px 0px rgba(255, 255, 255, 0.4), inset -2px -2px 0px
-    rgba(0, 0, 0, 0.4) !important;
-  transform: translate(-1px, -1px);
-}
-
-/* === ADDITIONAL MINECRAFT STYLING === */
-.wplace-theme-minecraft * {
-  image-rendering: pixelated !important;
-  image-rendering: -moz-crisp-edges !important;
-  image-rendering: crisp-edges !important;
-}
-
-.wplace-theme-minecraft .wplace-color-item-name {
-  color: #ffffff !important;
-  font-weight: bold !important;
-  text-shadow: 2px 2px 0px #000000 !important;
-  text-transform: uppercase !important;
-}
-
-.wplace-theme-minecraft .wplace-color-label {
-  color: var(--wplace-highlight) !important;
-  font-weight: bold !important;
-  text-shadow: 2px 2px 0px #000000 !important;
-  text-transform: uppercase !important;
-}
-
-.wplace-theme-minecraft .wplace-stat-label {
-  color: var(--wplace-text) !important;
-  text-shadow: 1px 1px 0px #000000 !important;
-  font-weight: bold !important;
-  text-transform: uppercase !important;
-}
-
-/* Enhanced stat grid with crafting table aesthetic */
-.wplace-theme-minecraft .wplace-stat-colors-grid {
-  background: linear-gradient(135deg, #c6c6c6 0%, #a0a0a0 100%),
-    repeating-linear-gradient(0deg, transparent, transparent 16px, rgba(0, 0, 0, 0.2) 16px, rgba(0, 0, 0, 0.2) 17px),
-    repeating-linear-gradient(90deg, transparent, transparent 16px, rgba(0, 0, 0, 0.2) 16px, rgba(0, 0, 0, 0.2) 17px) !important;
-  border-radius: 0 !important;
-  border: 3px solid #2f4f2f !important;
-  box-shadow: inset 3px 3px 0px #000000, inset -1px -1px 0px rgba(255, 255, 255, 0.3) !important;
 }

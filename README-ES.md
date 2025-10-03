@@ -110,7 +110,7 @@ javascript:fetch("[https://raw.githubusercontent.com/Wplace-AutoBot/WPlace-AutoB
 - [ ] Unir ambos scripts en uno solo
 - [x] Añadir sistema de superposición
 - [x] Añadir soporte para pintar entre áreas (Cross Tiles)
-- [x] Añadir solucionador de AutoCaptcha
+- [x] Añadir solucionador de AutoCaptchas
 - [x] Añadir omisión de píxeles del color correcto
 - [x] Separar CSS
 
